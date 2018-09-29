@@ -6,8 +6,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Title>test</Title>
-        <Title>test2</Title>
+        <Page classname="Page">
+          <Title>test</Title>
+          <Title>test2</Title>
+        </Page>
       </div>
     );
   }
@@ -17,6 +19,14 @@ class Title extends Component {
   render(){
     return (
       <header className={this.props.classname}>{this.props.children}</header>
+    )
+  }
+}
+
+class Page extends Component {
+  render(){
+    return (
+      <div className={this.props.classname}>{this.props.children}</div>
     )
   }
 }

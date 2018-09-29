@@ -8,6 +8,17 @@
   flex-direction: column;
 }
 
+.Page {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  height: 80vh;
+  width: 80vw;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
