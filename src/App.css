@@ -19,20 +19,38 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.detail {
+}
+
+.details {
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.tab {
+  position: absolute;
+  display: inline-block;
+  width: 5em;
+}
+
+.paragraph {
+  padding-left: 2em;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
 }
 
 .App-header {
-  background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 5em;
 }
 
 .App-intro {
