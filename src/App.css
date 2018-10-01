@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Quicksand:300');
+
 .App {
-  background-color: #69F0AE;
+  background-color: white;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -9,13 +11,12 @@
 }
 
 .Page {
+  background-color: #00e676;
   display: flex;
-  background-color: white;
   flex-direction: column;
   height: 80vh;
   width: 80vw;
   padding: 10px 20px;
-  border-radius: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -23,6 +24,21 @@
 }
 
 .details {
+}
+
+.text {
+}
+
+.input-line {
+  background-color: #00e676;
+  border: none;
+  border-bottom: 2px solid #00b248;
+  font-size: 1em;
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+.input-line::placeholder {
+  color: #66ffa6;
 }
 
 .bold {
@@ -50,6 +66,7 @@
 }
 
 .App-title {
+  font-family: 'Quicksand', sans-serif;
   font-size: 5em;
 }
 
