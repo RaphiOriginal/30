@@ -14,9 +14,9 @@ class App extends Component {
             <Detail header="Uhrzeit" info="18:00" />
             <Detail header="Ort" info="Unbekannt" />
           </Details>
-          <Form>
-            <Input className="input-line" placeholder="Name" />
-          </Form>
+          <SignUp>
+            <Text>Ich, <Input className="input-line" placeholder="Name" />, <Dropdown className="input-select" list={["werde gerne", "kann nicht"]} title="will" /> teilnehmen.</Text>
+          </SignUp>
         </Page>
       </div>
     );
@@ -47,7 +47,7 @@ class Text extends Component {
   }
 }
 
-class Form extends Component {
+class SignUp extends Component {
   render(){
     return (
       <form>{this.props.children}</form>
@@ -70,6 +70,44 @@ class Input extends Component {
   render(){
     return (
       <input className= {this.props.className} type="text" placeholder={this.props.placeholder} value={this.state.value} onChange={this.handleChange} />
+    )
+  }
+}
+
+class Dropdown extends Component {
+  constructor(props){
+    super(props);
+    this.state={
+      listOpen: false,
+      headerTitle: this.props.title
+    };
+
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.toggleList = this.toggleList.bind(this);
+  }
+
+  handleClickOutside(){
+    this.setState({listOpen: false});
+  }
+
+  toggleList(){
+    this.setState(prevState => ({listOpen: !prevState.listOpen}))
+  }
+
+  render(){
+    return (
+      <div className="dd-wrapper">
+        <div className="dd-header" onClick={() => this.toggleList()}>
+          <div className="dd-title">{this.props.headerTitle}</div>
+          {this.state.listOpen
+            ? <p>a</p>
+            : <p>b</p>
+          }
+        </div>
+        {this.state.listOpen && <ul className="dd-list">
+          {this.props.list.map((item) => (<li className="dd-list-item" key={item}>{item}</li>))}
+        </ul>}
+      </div>
     )
   }
 }

@@ -41,6 +41,10 @@
   color: #66ffa6;
 }
 
+.input-select {
+  font-size: 1em;
+}
+
 .bold {
   font-weight: bold;
 }
