@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Quicksand:300');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 .App {
   background-color: white;
@@ -29,6 +30,11 @@
 .text {
 }
 
+.SignUp {
+  display: flex;
+  flex-direction: row;
+}
+
 .input-line {
   background-color: #00e676;
   border: none;
@@ -43,6 +49,38 @@
 
 .input-select {
   font-size: 1em;
+}
+
+.dd-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+}
+
+.dd-title {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2px solid #00b248;
+}
+
+.dd-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: #424242;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.dd-list li:hover {
+  background-color: #6d6d6d;
+}
+
+.dd-icon {
+  color: #00b248;
+  right: 0;
 }
 
 .bold {

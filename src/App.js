@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FontAwesome from 'react-fontawesome';
 import logo from './logo.svg';
 import './App.css';
 
@@ -15,7 +16,7 @@ class App extends Component {
             <Detail header="Ort" info="Unbekannt" />
           </Details>
           <SignUp>
-            <Text>Ich, <Input className="input-line" placeholder="Name" />, <Dropdown className="input-select" list={["werde gerne", "kann nicht"]} title="will" /> teilnehmen.</Text>
+            <Text>Ich, <Input className="input-line" placeholder="Name" />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="will" /> teilnehmen.</Text>
           </SignUp>
         </Page>
       </div>
@@ -42,7 +43,7 @@ class Page extends Component {
 class Text extends Component {
   render(){
     return (
-      <div className={this.props.classname}>{this.props.children}</div>
+      <div className="SignUp">{this.props.children}</div>
     )
   }
 }
@@ -50,7 +51,7 @@ class Text extends Component {
 class SignUp extends Component {
   render(){
     return (
-      <form>{this.props.children}</form>
+      <form className={this.props.classname}>{this.props.children}</form>
     )
   }
 }
@@ -74,7 +75,7 @@ class Input extends Component {
   }
 }
 
-class Dropdown extends Component {
+class Dropdown2 extends Component {
   constructor(props){
     super(props);
     this.state={
@@ -84,6 +85,7 @@ class Dropdown extends Component {
 
     this.handleClickOutside = this.handleClickOutside.bind(this);
     this.toggleList = this.toggleList.bind(this);
+    this.select = this.select.bind(this);
   }
 
   handleClickOutside(){
@@ -94,18 +96,23 @@ class Dropdown extends Component {
     this.setState(prevState => ({listOpen: !prevState.listOpen}))
   }
 
+  select(item){
+    this.setState({headerTitle: item});
+    this.toggleList();
+  }
+
   render(){
     return (
       <div className="dd-wrapper">
-        <div className="dd-header" onClick={() => this.toggleList()}>
-          <div className="dd-title">{this.props.headerTitle}</div>
+        <span className="dd-title" onClick={() => this.toggleList()}>
+          {this.state.headerTitle}
           {this.state.listOpen
-            ? <p>a</p>
-            : <p>b</p>
+            ? <FontAwesome name="angle-up" className="dd-icon" />
+            : <FontAwesome name="angle-down" className="dd-icon"/>
           }
-        </div>
+        </span>
         {this.state.listOpen && <ul className="dd-list">
-          {this.props.list.map((item) => (<li className="dd-list-item" key={item}>{item}</li>))}
+          {this.props.list.map((item) => (<li className="dd-list-item" key={item} onClick={() => this.select(item)}>{item}</li>))}
         </ul>}
       </div>
     )
