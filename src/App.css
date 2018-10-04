@@ -52,9 +52,11 @@
 }
 
 .dd-wrapper {
+  width: 130px;
   position: relative;
   display: inline-block;
   font-size: 1em;
+  justify-content: space-between;
 }
 
 .dd-title {
@@ -62,6 +64,8 @@
   display: flex;
   flex-direction: row;
   border-bottom: 2px solid #00b248;
+  padding-bottom: 7px;
+  justify-content: space-between;
 }
 
 .dd-list {
@@ -71,16 +75,23 @@
   color: white;
   background-color: #424242;
   position: absolute;
+  width: 100%;
+}
+
+.dd-list-item {
+  line-height: 1.6rem;
   white-space: nowrap;
+  padding-left: 5px;
 }
 
 .dd-list li:hover {
+  display: block;
   background-color: #6d6d6d;
 }
 
 .dd-icon {
   color: #00b248;
-  right: 0;
+  margin-right: 5px;
 }
 
 .bold {
