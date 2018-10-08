@@ -9,7 +9,7 @@ class App extends Component {
       <div className="App">
         <Page classname="Page">
           <Title classname="App-title">Einladung</Title>
-          <Text classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat.</Text>
+          <Text classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat. Ausser gute Laune braucht ihr nichts mit zu bringen. Alkoholfreie Getränke und eine Auswahl an Cocktails werden zur verfügung gestellt. Bier für das Bier müsst ihr jedoch selber aufkommen. Für Personen mit einem längeren Nachhause weg, gäbe es noch die Option im Gasthof Kreuz ein Zimmer zu buchen. Eine Nacht mit Frühstück kostet 85.- CHF ohne Frühstück 75.- CHF. Bitte meldet euch bis zum 25. November mit unten stehendem Formular an.</Text>
           <Details>
             <Detail header="Datum" info="30.11.2018" />
             <Detail header="Uhrzeit" info="18:00" />
