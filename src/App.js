@@ -10,13 +10,15 @@ class App extends Component {
         <Page classname="Page">
           <Title classname="App-title">Einladung</Title>
           <Text classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat. Ausser gute Laune braucht ihr nichts mit zu bringen. Alkoholfreie Getränke und eine Auswahl an Cocktails werden zur verfügung gestellt. Bier für das Bier müsst ihr jedoch selber aufkommen. Für Personen mit einem längeren Nachhause weg, gäbe es noch die Option im Gasthof Kreuz ein Zimmer zu buchen. Eine Nacht mit Frühstück kostet 85.- CHF ohne Frühstück 75.- CHF. Bitte meldet euch bis zum 25. November mit unten stehendem Formular an.</Text>
+          <Text classname="App-title">Es sind Parkplätze vorhanden.</Text>
           <Details>
             <Detail header="Datum" info="30.11.2018" />
             <Detail header="Uhrzeit" info="18:00" />
             <Detail header="Ort" info={ <Adress adress="Gasthof Kreuz" street="Hauptstrasse 43" zip="4716" town="Welschenrohr" /> } />
           </Details>
           <SignUp>
-            <Text>Ich, <Input className="input-line" placeholder="Name" />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="will" /> teilnehmen.</Text>
+            <Text classname="App-title">Ich, <Input className="input-line" placeholder="Name" />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="werde gerne" /> teilnehmen.</Text>
+            <Text classname="App-title">Gerne melde ich mich <Dropdown2 className="input-select" list={["mit meinem Partner", "alleine"]} title="alleine" /> an.</Text>
           </SignUp>
         </Page>
       </div>
