@@ -9,11 +9,11 @@ class App extends Component {
       <div className="App">
         <Page classname="Page">
           <Title classname="App-title">Einladung</Title>
-          <Text classname="text">The Material Design color system uses an organized approach to applying color to your UI. In this system, a primary and a secondary color are typically selected to represent your brand. Dark and light variants of each color can then be applied to your UI in different ways.</Text>
+          <Text classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat.</Text>
           <Details>
             <Detail header="Datum" info="30.11.2018" />
             <Detail header="Uhrzeit" info="18:00" />
-            <Detail header="Ort" info="Unbekannt" />
+            <Detail header="Ort" info={ <Adress adress="Gasthof Kreuz" street="Hauptstrasse 43" zip="4716" town="Welschenrohr" /> } />
           </Details>
           <SignUp>
             <Text>Ich, <Input className="input-line" placeholder="Name" />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="will" /> teilnehmen.</Text>
@@ -21,6 +21,18 @@ class App extends Component {
         </Page>
       </div>
     );
+  }
+}
+
+class Adress extends Component {
+  render(){
+    return (
+      <div className="ad-wrapper">
+        <div className="ad-line">{this.props.adress}</div>
+        <div className="ad-line">{this.props.street}</div>
+        <div className="ad-line">{this.props.zip} {this.props.town}</div>
+      </div>
+    )
   }
 }
 
