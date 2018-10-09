@@ -9,8 +9,13 @@ class App extends Component {
       <div className="App">
         <Page classname="Page">
           <Title classname="App-title">Einladung</Title>
-          <Text classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat. Ausser gute Laune braucht ihr nichts mit zu bringen. Alkoholfreie Getränke und eine Auswahl an Cocktails werden zur verfügung gestellt. Bier für das Bier müsst ihr jedoch selber aufkommen. Für Personen mit einem längeren Nachhause weg, gäbe es noch die Option im Gasthof Kreuz ein Zimmer zu buchen. Eine Nacht mit Frühstück kostet 85.- CHF ohne Frühstück 75.- CHF. Bitte meldet euch bis zum 25. November mit unten stehendem Formular an.</Text>
-          <Text classname="App-title">Es sind Parkplätze vorhanden.</Text>
+          <div classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat.</div>
+          <div classname="text">Ausser gute Laune braucht ihr nichts mit zu bringen. Alkoholfreie Getränke und eine Auswahl an Cocktails werden zur verfügung gestellt.</div>
+          <div classname="text">Bier für das Bier müsst ihr jedoch selber aufkommen.</div>
+          <div classname="text">Für Personen mit einem längeren Nachhause weg, gäbe es noch die Option im <a className="link" href="https://www.gasthof-kreuz.ch/index.php/hotel">Gasthof Kreuz ein Zimmer zu buchen</a>.</div>
+          <div classname="text">Eine Nacht mit Frühstück kostet 85.- CHF ohne Frühstück 75.- CHF.</div>
+          <div classnem="text">Bitte meldet euch bis zum <span className="bold">25. November</span> mit unten stehendem Formular an.</div>
+          <div classname="App-title">Es sind Parkplätze vorhanden.</div>
           <Details>
             <Detail header="Datum" info="30.11.2018" />
             <Detail header="Uhrzeit" info="18:00" />
@@ -19,6 +24,7 @@ class App extends Component {
           <SignUp>
             <Text classname="App-title">Ich, <Input className="input-line" placeholder="Name" />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="werde gerne" /> teilnehmen.</Text>
             <Text classname="App-title">Gerne melde ich mich <Dropdown2 className="input-select" list={["mit meinem Partner", "alleine"]} title="alleine" /> an.</Text>
+            <Button name="Anmelden" action={ () => alert("yolo") } />
           </SignUp>
         </Page>
       </div>
@@ -33,6 +39,16 @@ class Adress extends Component {
         <div className="ad-line">{this.props.adress}</div>
         <div className="ad-line">{this.props.street}</div>
         <div className="ad-line">{this.props.zip} {this.props.town}</div>
+      </div>
+    )
+  }
+}
+
+class Button extends Component {
+  render(){
+    return(
+      <div>
+        <button className="button" onClick={this.props.action}>{this.props.name}</button>
       </div>
     )
   }

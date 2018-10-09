@@ -21,6 +21,20 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.button {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  padding: 0.7em;
+  border: none;
+  font-size: 1em;
+  text-align: center;
+  background-color: #424242;
+  color: white;
+  margin: 2px;
+  border-radius: 0.5em;
+}
+
 .detail {
   vertical-align: baseline;
 }
@@ -97,6 +111,15 @@
 
 .bold {
   font-weight: bold;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
 }
 
 .tab {
