@@ -11,7 +11,7 @@ class App extends Component {
           <Title classname="App-title">Einladung</Title>
           <div classname="text">Gerne lade ich dich/euch zu meinem 30. Geburtstag ein. Gefeiert wird in meiner alten Heimat.</div>
           <div classname="text">Ausser gute Laune braucht ihr nichts mit zu bringen. Alkoholfreie Getränke und eine Auswahl an Cocktails werden zur verfügung gestellt.</div>
-          <div classname="text">Bier für das Bier müsst ihr jedoch selber aufkommen.</div>
+          <div classname="text">Für das Bier müsst ihr jedoch selber aufkommen.</div>
           <div classname="text">Für Personen mit einem längeren Nachhause weg, gäbe es noch die Option im <a className="link" href="https://www.gasthof-kreuz.ch/index.php/hotel">Gasthof Kreuz ein Zimmer zu buchen</a>.</div>
           <div classname="text">Eine Nacht mit Frühstück kostet 85.- CHF ohne Frühstück 75.- CHF.</div>
           <div classnem="text">Bitte meldet euch bis zum <span className="bold">25. November</span> mit unten stehendem Formular an.</div>
@@ -21,11 +21,7 @@ class App extends Component {
             <Detail header="Uhrzeit" info="18:00" />
             <Detail header="Ort" info={ <Adress adress="Gasthof Kreuz" street="Hauptstrasse 43" zip="4716" town="Welschenrohr" /> } />
           </Details>
-          <SignUp>
-            <Text classname="App-title">Ich, <Input className="input-line" placeholder="Name" />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="werde gerne" /> teilnehmen.</Text>
-            <Text classname="App-title">Gerne melde ich mich <Dropdown2 className="input-select" list={["mit meinem Partner", "alleine"]} title="alleine" /> an.</Text>
-            <Button name="Anmelden" action={ () => alert("yolo") } />
-          </SignUp>
+          <SignUp />
         </Page>
       </div>
     );
@@ -79,9 +75,44 @@ class Text extends Component {
 }
 
 class SignUp extends Component {
+
+  constructor(props){
+    super(props);
+    this.state={
+      name: '',
+      attend: '',
+      partner: ''
+    };
+
+    this.signUp = this.signUp.bind(this);
+    this.toggleName = this.toggleName.bind(this);
+    this.toggleAttend = this.toggleAttend.bind(this);
+    this.togglePartner = this.togglePartner.bind(this);
+  }
+
+  signUp(){
+    alert('name: ' + this.state.name + ', attend: ' + this.state.attend + ', partner: ' + this.state.partner);
+  }
+
+  toggleName(name){
+    this.setState({name: name});
+  }
+
+  toggleAttend(attend){
+    this.setState({attend: attend});
+  }
+
+  togglePartner(partner){
+    this.setState({partner: partner});
+  }
+
   render(){
     return (
-      <form className={this.props.classname}>{this.props.children}</form>
+      <form className={this.props.classname}>
+        <div classname="App-title">Ich, <Input className="input-line" placeholder="Name" toggleItem={this.toggleName} />, <Dropdown2 className="input-select" list={["werde gerne", "kann nicht"]} title="werde gerne" toggleItem={this.toggleAttend}/> teilnehmen.</div>
+        <div classname="App-title">Gerne melde ich mich <Dropdown2 className="input-select" list={["mit meinem Partner", "alleine"]} title="alleine" toggleItem={this.togglePartner} /> an.</div>
+        <Button name="Anmelden" action={ () => this.signUp() } />
+      </form>
     )
   }
 }
@@ -129,6 +160,7 @@ class Dropdown2 extends Component {
   select(item){
     this.setState({headerTitle: item});
     this.toggleList();
+    this.props.toggleItem(item);
   }
 
   render(){
